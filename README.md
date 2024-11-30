@@ -27,7 +27,7 @@ To stage the all modified files:
 $ git add . 
 
 To stage specific modified files:
-$ git add <file1> <file2> ..
+$ git add file1 file2 ..
 
 To commit the change:
 $ git commit -m "commit message"

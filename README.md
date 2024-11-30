@@ -15,14 +15,25 @@ This project helps get independent of the Ethernet cable.
    
 # Delete this part later:
 
-git clone https://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@github.com/ninadrathod/independent_raspPi.git
+To clone the repo:
+$ git clone https://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@github.com/ninadrathod/independent_raspPi.git
 
-cd independent_raspPi/
+Go to the cloned repo:
+$ cd independent_raspPi/
 
 Make your edits
 
-"git add ." or "git add <file1> <file2> .."
+To stage the all modified files:
+$ git add . 
 
-git commit -m "commit message"
+To stage specific modified files:
+$ git add <file1> <file2> ..
 
-git push origin main
+To commit the change:
+$ git commit -m "commit message"
+
+To push the code to the main branch:
+$ git push origin main
+
+To pull the latest code from repo:
+$ git pull origin main

@@ -13,4 +13,16 @@ This project helps get independent of the Ethernet cable.
    Go to the directory "independent_raspPi" and run the following terminal command:
    *$chmod 755 wifi_connect.sh*
    
-5. 
+# Delete this part later:
+
+git clone https://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@github.com/ninadrathod/independent_raspPi.git
+
+cd independent_raspPi/
+
+Make your edits
+
+"git add ." or "git add <file1> <file2> .."
+
+git commit -m "commit message"
+
+git push origin main

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# To debug the script
+# set -x
+
 b=0
 
 # scan for all the available WiFi networks
@@ -23,11 +26,11 @@ done < ssid_password.csv # feed ssid_password.csv as an input to the loop
 
 # if b!=0, wifi is connected successfully
 if [ $b -ne 0 ]; then
-	echo "Successfully connected to WiFi network"
-	echo "$(date +"%Y-%m-%d %H:%M:%S") : successfully connected to WiFi network $ssid" >> $HOME/wifi_log.txt
+	echo "Successfully connected to WiFi network";
+	echo "$(date +"%Y-%m-%d %H:%M:%S") : successfully connected to WiFi network $ssid" >> wifi_log.txt;
 else
-	echo "Unable to connect to any network"
-	echo "$(date +"%Y-%m-%d %H:%M:%S") : unable to connect to any network" >> $HOME/wifi_log.txt
+	echo "Unable to connect to any network";
+	echo "$(date +"%Y-%m-%d %H:%M:%S") : unable to connect to any network" >> wifi_log.txt;
 fi
 
 # Use the following command to check which SSID is your device connected to:

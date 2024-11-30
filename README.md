@@ -37,3 +37,6 @@ $ git push origin main
 
 To pull the latest code from repo:
 $ git pull origin main
+
+To see which network SSID you are connected to:
+$ iwgetid wlan0

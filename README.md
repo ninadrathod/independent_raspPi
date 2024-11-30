@@ -40,3 +40,6 @@ $ git pull origin main
 
 To see which network SSID you are connected to:
 $ iwgetid wlan0
+
+To see a list of devices connected to the same network as yours:
+$ sudo netdiscover -r 192.168.1.254/24

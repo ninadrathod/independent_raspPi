@@ -3,7 +3,7 @@
 b=0
 
 # scan for all the available WiFi networks
-iwlist wlan0 scan
+iwlist wlan0 scan | grep ESSID
 
 # while loop to read "ssid" and "password" from the "ssid_password.csv" file
 while IFS="," read -r ssid password

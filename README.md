@@ -10,21 +10,27 @@ This project helps get independent of the Ethernet cable.
    *Give reference link here with any additional info if necessary*
 
 3. Necessary installations: <br />
-   a) _$sudo apt install python3-pip_ <br />
-   b) Installs the development libraries for glib-2.0, which are required by "bluepy" during the installation process.
-      _$sudo apt install libglib2.0-dev_ <br />
+   a) _$ sudo apt install python3-pip_ <br />
+   b) Installs the development libraries for glib-2.0, which are required by "bluepy" during the installation process. <br />
+      _$ sudo apt install libglib2.0-dev_ <br />
    b) Create a virtual environment to install _bluepy_: <br />
-      _$python3 -m venv bluetooth_py_
-   c) Activate the virtual environment
+      _$ python3 -m venv bluetooth_py_ <br />
+   c) Activate the virtual environment <br />
       _source bluetooth_py/bin/activate_
-   d) _$pip install bluepy_ <br />
-      _python3 -m pip install pybluez_ <br />
+   d) _$ pip install bluepy_ <br />
+      _$ sudo apt-get install bluetooth libbluetooth-dev_ <br />
+      _$ python3 -m pip install --upgrade pip setuptools wheel_ <br />
+      _$ wget https://github.com/pybluez/pybluez/archive/refs/heads/master.zip_ <br />
+      _$ unzip master.zip_ <br />
+      _$ cd pybluez-master_ <br />
+      _$ python3 setup.py install_ <br />
+      _$ python3 -m pip install --upgrade pybluez_ <br />
    
 5. Configuring the wifi_connect.sh script: <br />
    a) Open the "wifi_connect.sh" script in an editor and set value of _dir_path_ variable to the path where you have stored the 
       "independent_raspPi" directory. <br />
-   b) Go to the directory "independent_raspPi" and run the following terminal command:
-     *$chmod 755 wifi_connect.sh* <br />
+   b) Go to the directory "independent_raspPi" and run the following terminal command: <br />
+     *$ chmod 755 wifi_connect.sh* <br />
 
 6. Set a cronjob to run this script whenever you turn the Raspberry Pi on: <br />
    a) Run the command: _$sudo crontab -e_ <br />

@@ -44,31 +44,40 @@ This project helps get independent of the Ethernet cable.
    
 # Delete this part later:
 
-To clone the repo:
+To clone the repo:<br />
 $ git clone https://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@github.com/ninadrathod/independent_raspPi.git
 
-Go to the cloned repo:
+Go to the cloned repo:<br />
 $ cd independent_raspPi/
 
 Make your edits
 
-To stage the all modified files:
+To stage the all modified files: <br />
 $ git add . 
 
-To stage specific modified files:
+To stage specific modified files:<br />
 $ git add file1 file2 ..
 
-To commit the change:
+To commit the change:<br />
 $ git commit -m "commit message"
 
-To push the code to the main branch:
+To push the code to the main branch:<br />
 $ git push origin main
 
-To pull the latest code from repo:
+To pull the latest code from repo:<br />
 $ git pull origin main
 
-To see which network SSID you are connected to:
+To see which network SSID you are connected to:<br />
 $ iwgetid wlan0
 
-To see a list of devices connected to the same network as yours:
+To see a list of devices connected to the same network as yours:<br />
 $ sudo netdiscover -r 192.168.1.254/24
+
+Bluetooth-related commands: <br />
+
+$ sudo systemctl enable bluetooth<br />
+$ sudo systemctl start bluetooth<br />
+$ hciconfig<br />
+$ sudo hciconfig hci0 piscan<br />
+
+

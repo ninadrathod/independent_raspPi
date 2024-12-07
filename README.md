@@ -3,26 +3,26 @@
 Every time you go to a new place and need to connect your Raspberry Pi to a new network, you need to use the Ethernet cable to connect it to your laptop first and then you connect the Pi to the nearest SSID.
 This project helps get independent of the Ethernet cable.
 
-1. Install Raspberry Pi OS into your SD card:
+1. Install Raspberry Pi OS into your SD card: <br />
    *Add detailed installation steps with initial customization options*
    
-2. Clone this repository into the Raspberry Pi:
+2. Clone this repository into the Raspberry Pi: <br />
    *Give reference link here with any additional info if necessary*
    
-3. Configuring the wifi_connect.sh script:
+3. Configuring the wifi_connect.sh script: <br />
    a) Open the "wifi_connect.sh" script in an editor and set value of _dir_path_ variable to the path where you have stored the 
-      "independent_raspPi" directory.
+      "independent_raspPi" directory. <br />
    b) Go to the directory "independent_raspPi" and run the following terminal command:
-     *$chmod 755 wifi_connect.sh*
+     *$chmod 755 wifi_connect.sh* <br />
 
-4. Set a cronjob to run this script whenever you turn the Raspberry Pi on:
-   a) Run the command: _$sudo crontab e_
-   b) Add the following line in the last line of the crontab:
-      _@reboot IRPPATH="</path/to/independent_raspPi>" && $IRPPATH/wifi_connect.sh >> $IRPPATH/wifi_connect.log 2>&1_
-      **NOTE: modify the path in <> as per your requirement**
-   c) Save the crontab and close it.
+4. Set a cronjob to run this script whenever you turn the Raspberry Pi on: <br />
+   a) Run the command: _$sudo crontab e_ <br />
+   b) Add the following line in the last line of the crontab: <br />
+      _@reboot IRPPATH="</path/to/independent_raspPi>" && $IRPPATH/wifi_connect.sh >> $IRPPATH/wifi_connect.log 2>&1_ <br />
+      **NOTE: modify the path in <> as per your requirement** <br />
+   c) Save the crontab and close it. <br />
 
-   In case the script does not trigger, you can check the wifi_connect.log for debugging.
+   In case the script does not trigger, you can check the wifi_connect.log for debugging. <br />
   
    
 # Delete this part later:

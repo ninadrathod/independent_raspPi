@@ -16,10 +16,10 @@ This project helps get independent of the Ethernet cable.
      *$chmod 755 wifi_connect.sh* <br />
 
 4. Set a cronjob to run this script whenever you turn the Raspberry Pi on: <br />
-   a) Run the command: _$sudo crontab e_ <br />
+   a) Run the command: _$sudo crontab -e_ <br />
    b) Add the following line in the last line of the crontab: <br />
       _@reboot IRPPATH="</path/to/independent_raspPi>" && $IRPPATH/wifi_connect.sh >> $IRPPATH/wifi_connect.log 2>&1_ <br />
-      **NOTE: modify the path in <> as per your requirement** <br />
+      <u>NOTE: modify the path in <> as per your requirement</u> <br />
    c) Save the crontab and close it. <br />
 
    In case the script does not trigger, you can check the wifi_connect.log for debugging. <br />

@@ -8,14 +8,18 @@ This project helps get independent of the Ethernet cable.
    
 2. Clone this repository into the Raspberry Pi: <br />
    *Give reference link here with any additional info if necessary*
+
+3. Necessary installations: <br />
+   a) _$sudo apt-get install python3-pip_ <br />
+   b) _$pip install bluepy_ <br />
    
-3. Configuring the wifi_connect.sh script: <br />
+4. Configuring the wifi_connect.sh script: <br />
    a) Open the "wifi_connect.sh" script in an editor and set value of _dir_path_ variable to the path where you have stored the 
       "independent_raspPi" directory. <br />
    b) Go to the directory "independent_raspPi" and run the following terminal command:
      *$chmod 755 wifi_connect.sh* <br />
 
-4. Set a cronjob to run this script whenever you turn the Raspberry Pi on: <br />
+5. Set a cronjob to run this script whenever you turn the Raspberry Pi on: <br />
    a) Run the command: _$sudo crontab -e_ <br />
    b) Add the following line in the last line of the crontab: <br />
       _@reboot IRPPATH="</path/to/independent_raspPi>" && $IRPPATH/wifi_connect.sh >> $IRPPATH/wifi_connect.log 2>&1_ <br />

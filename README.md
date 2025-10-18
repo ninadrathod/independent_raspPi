@@ -8,7 +8,7 @@ This project helps get independent of the Ethernet cable.
    
 2. Clone this repository into the Raspberry Pi: <br />
 
-3. Replace the data in <i>ssid_password.csv</i> with actual ID passwords
+3. Create a file <i>ssid_password.csv</i> and replace the following data with actual ID passwords in it.
    ```
    <WiFi_1 SSID>,<WiFi_1 Password>
    <WiFi_2 SSID>,<WiFi_2 Password>

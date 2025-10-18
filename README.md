@@ -4,13 +4,31 @@
 Every time you go to a new place and need to connect your Raspberry Pi to a new network, you need to use the Ethernet cable to connect it to your laptop first and then you connect the Pi to the nearest SSID.
 This project helps get independent of the Ethernet cable.
 
-1. Install Raspberry Pi OS into your SD card: <br />
-   *Add detailed installation steps with initial customization options*
+1. Install Raspberry Pi OS into your SD card: https://www.raspberrypi.com/software/
    
 2. Clone this repository into the Raspberry Pi: <br />
-   *Give reference link here with any additional info if necessary*
 
-3. Necessary installations: <br />
+3. Replace the data in <i>ssid_password.csv</i> with actual ID passwords
+   ```
+   <WiFi_1 SSID>,<WiFi_1 Password>
+   <WiFi_2 SSID>,<WiFi_2 Password>
+   ``` 
+4. Configuring the wifi_connect.sh script: <br />
+   a) Open the "wifi_connect.sh" script in an editor and set value of _dir_path_ variable to the path where you have stored the 
+      "independent_raspPi" directory. <br />
+   b) Go to the directory "independent_raspPi" and run the following terminal command: <br />
+     *$ chmod 755 wifi_connect.sh* <br />
+
+5. Set a cron job to run this script whenever you turn the Raspberry Pi on: <br />
+   a) Run the command: _$sudo crontab -e_ <br />
+   b) Add the following line in the last line of the crontab: <br />
+      _@reboot IRPPATH="</path/to/independent_raspPi>" && $IRPPATH/wifi_connect.sh >> $IRPPATH/wifi_connect.log 2>&1_ <br />
+      <u>NOTE: modify the path in <> as per your requirement</u> <br />
+   c) Save the crontab and close it. <br />
+
+   In case the script does not trigger, you can check the wifi_connect.log for debugging. <br />
+  
+6. <b>Necessary installations for Bluetooth Automation</b> <u>DO NOT INSTALL THESE LIBRARIES IN THE RASP PI IF YOU JUST NEED THE ABOVE AUTOMATION</u>: <br />
    a) _$ sudo apt install python3-pip_ <br />
    b) Installs the development libraries for glib-2.0, which are required by "bluepy" during the installation process. <br />
       _$ sudo apt install libglib2.0-dev_ <br />
@@ -26,22 +44,6 @@ This project helps get independent of the Ethernet cable.
       _$ cd pybluez-master_ <br />
       _$ python3 setup.py install_ <br />
       _$ python3 -m pip install --upgrade pybluez_ <br />
-   
-5. Configuring the wifi_connect.sh script: <br />
-   a) Open the "wifi_connect.sh" script in an editor and set value of _dir_path_ variable to the path where you have stored the 
-      "independent_raspPi" directory. <br />
-   b) Go to the directory "independent_raspPi" and run the following terminal command: <br />
-     *$ chmod 755 wifi_connect.sh* <br />
-
-6. Set a cronjob to run this script whenever you turn the Raspberry Pi on: <br />
-   a) Run the command: _$sudo crontab -e_ <br />
-   b) Add the following line in the last line of the crontab: <br />
-      _@reboot IRPPATH="</path/to/independent_raspPi>" && $IRPPATH/wifi_connect.sh >> $IRPPATH/wifi_connect.log 2>&1_ <br />
-      <u>NOTE: modify the path in <> as per your requirement</u> <br />
-   c) Save the crontab and close it. <br />
-
-   In case the script does not trigger, you can check the wifi_connect.log for debugging. <br />
-  
    
 # Delete this part later:
 
